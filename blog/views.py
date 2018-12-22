@@ -9,9 +9,9 @@ from django.views.generic import (
     UpdateView,
     DeleteView
     )
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.models import User
 from .models import Post
-
 
 def home(request):
     context = {
@@ -36,6 +36,20 @@ class PostListView(ListView):
     ordering = ['-date_posted'] 
      # '-' makes it from newest to oldest
     # 'date_post' from oldest to newest
+
+    paginate_by = 4
+
+class UserPostListView(ListView):
+    model = Post
+    template_name = 'blog/user_posts.html' 
+    context_object_name = 'posts'   
+    paginate_by = 4
+
+    def get_queryset(self):
+        # 404 if doesnt exist
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-date_posted')
+
 
 class PostDetailView(DetailView):
     model = Post
