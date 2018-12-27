@@ -1,2 +1,3 @@
 # django_blog
-Django Blog 
+Created this web application to further my understanding of Django and MVC frameworks.
+
