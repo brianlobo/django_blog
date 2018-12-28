@@ -6,19 +6,51 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 }
 
-#logo {
-    color: white;
-    font-weight: 600;
-    font-size: 1.5em;
-    margin: 0;
-    padding: 0;
-}
-
 aside {
     background-color: #2F375A;
     display: grid;
     grid-template-columns: 85% 15%;
     padding: 1.5em;
+}
+
+nav {
+  background: #676E90;
+}
+
+nav > ul {
+  display: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 3em;
+  color: white;
+}
+
+nav > ul > li > a:hover {
+  color:white;
+  text-decoration: none;
+}
+
+nav > ul > li > a:active {
+  color:rgb(166, 228, 255);
+}
+
+.navactive {
+  position: absolute;
+  display: block;
+  background: #676E90;
+  width: 70%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+  position: fixed;
 }
 
 aside > h1 > a:visited {
@@ -42,6 +74,10 @@ aside > #menubar {
     padding: 0;
 }
 
+article {
+  margin: 0 5%;
+}
+
 .content-section {
     background: #ffffff;
     padding: 10px 20px;
@@ -50,65 +86,95 @@ aside > #menubar {
     margin-bottom: 20px;
   }
   
-  .article-title {
-    color: #444444;
-  }
-  
-  a.article-title:hover {
-    color: #428bca;
-    text-decoration: none;
-  }
-  
-  .article-content {
-    white-space: pre-line;
-  }
-  
-  .article-img {
-    height: 65px;
-    width: 65px;
-    margin-right: 16px;
-    display: none;
-  }
-  
-  .article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
-  }
-  
-  .article-metadata a:hover {
-    color: #333;
-    text-decoration: none;
-  }
-  
-  .article-svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-  }
-  
-  .account-img {
-    height: 125px;
-    width: 125px;
-    margin-right: 20px;
-    margin-bottom: 16px;
-  }
-  
-  .account-heading {
-    font-size: 2.5rem;
-  }
+.article-title {
+  color: #444444;
+}
 
-  #banner {
-    padding-top: 7em;
-    padding-bottom: 7em;
-    background: url("banner_bg.jpg") center no-repeat;
-  }
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
 
-  #banner > h2 {
-    color: white;
-    font-weight: bolder;
-  }
+.article-content {
+  white-space: pre-line;
+}
 
-  #banner > a{
-    margin: .5em;
-  }
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+  display: none;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.header {
+  margin-left: 5%;
+  margin-bottom: .5em;
+  font-weight: bold;
+}
+
+.paginate {
+  margin-left: 5%;
+}
+
+#logo {
+  color: white;
+  font-weight: 600;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+#logo > a:hover {
+text-decoration: none;
+}
+
+#banner {
+  padding-top: 7em;
+  padding-bottom: 7em;
+  background: url("banner_bg.jpg") center no-repeat;
+}
+
+#banner > h2 {
+  color: white;
+  font-weight: bolder;
+}
+
+#banner > a{
+  margin: .5em;
+}
+
+#logout {
+  margin: 2em 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  
+}
