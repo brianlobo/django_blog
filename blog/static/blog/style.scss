@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+$colors: (
+    dark_blue: #2F375A,
+    light_blue: #676E90,
+    active_blue: #428bca
+);
+
+$breakpoints: (
+  md: 1085px,
+  lg: 1200px
+);
+
+@mixin respond-above($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      $breakpoint-value: map-get($breakpoints, $breakpoint);
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    } @else {
+      @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+@function color($color_name) {
+    @return map-get($colors, $color_name);
+}
+
+// Mobile First //
+
+body, html {
+    height: calc(100% - 2em);
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background: color(light_blue);
+
+    .navactive {
+        position: absolute;
+        display: block;
+        background: color(light_blue);
+        width: 70%;
+        left: 0;
+        top: 0;
+        height: 100%;
+        z-index: 1;
+        position: fixed;
+    }
+
+    ul {
+        display: none;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                display: block;
+                padding: 3em;
+                color: white;
+            }
+
+            a:hover {
+                color:white;
+                text-decoration: none;
+            }
+
+            a:active {
+                color: color(active_blue);
+            }
+        }
+    }
+}
+
+aside {
+    background-color: color(dark_blue);
+    display: grid;
+    grid-template-columns: 85% 15%;
+    padding: 1.5em;
+
+    #logo {
+        font-weight: 600;
+        font-size: 1.5em;
+        margin: 0;
+        padding: 0;
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
+    #menubar {
+        width: 30px;
+        height: auto;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        a:visited {
+            color: white;
+        }
+        a:link {
+            color: white;
+        }
+        a:active {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+main {
+    #banner {
+        padding-top: 7em;
+        padding-bottom: 7em;
+        background: url("banner_bg.jpg") center no-repeat;
+        
+        h2 {
+            color: white;
+            font-weight: bolder;
+        }
+
+        a {
+            margin: .5em;
+        }
+    }
+
+    article {
+        margin: 0 5%;
+    }
+          
+    .content-section {
+        background: #ffffff;
+        padding: 10px 20px;
+        border: 1px solid #dddddd;
+        border-radius: 3px;
+        margin-bottom: 20px;
+    }
+    
+    .article-title {
+        color: #444444;
+    }
+    
+    a.article-title:hover {
+        color: color(active_blue);
+        text-decoration: none;
+    }
+    
+    .article-content {
+        white-space: pre-line;
+    }
+    
+    .article-img {
+        height: 65px;
+        width: 65px;
+        margin-right: 16px;
+        display: none;
+    }
+    
+    .article-metadata {
+        padding-bottom: 1px;
+        margin-bottom: 4px;
+        border-bottom: 1px solid #e3e3e3
+    }
+    
+    .article-metadata a:hover {
+        color: #333;
+        text-decoration: none;
+    }
+    
+    .article-svg {
+        width: 25px;
+        height: 25px;
+        vertical-align: middle;
+    }
+    
+    .account-img {
+        height: 125px;
+        width: 125px;
+        margin-right: 20px;
+        margin-bottom: 16px;
+    }
+    
+    .account-heading {
+        font-size: 2.5rem;
+    }
+    
+    .header {
+        margin-left: 5%;
+        margin-bottom: .5em;
+        font-weight: bold;
+    }
+    
+    .paginate {
+        margin-left: 5%;
+    }
+    
+    #logout {
+        margin: 2em 1em;
+    }
+    
+}
+
+// Med media query //
+@include respond-above(md){
+    body {
+        display: grid;
+        grid-template-columns: 20% auto;
+        padding: 2em;
+        
+        aside {
+            grid-template-columns: auto;
+            grid-template-rows: 30% auto;
+            #menubar {
+                display: none;
+            }
+        }
+    }
+}

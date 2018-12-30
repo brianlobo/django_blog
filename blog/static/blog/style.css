@@ -1,47 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 body, html {
-    height: calc(100% - 2em);
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-}
-
-aside {
-    background-color: #2F375A;
-    display: grid;
-    grid-template-columns: 85% 15%;
-    padding: 1.5em;
+  height: calc(100% - 2em);
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 nav {
   background: #676E90;
 }
 
-nav > ul {
-  display: none;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav > ul > li > a {
-  text-decoration: none;
-  text-transform: uppercase;
-  display: block;
-  padding: 3em;
-  color: white;
-}
-
-nav > ul > li > a:hover {
-  color:white;
-  text-decoration: none;
-}
-
-nav > ul > li > a:active {
-  color:rgb(166, 228, 255);
-}
-
-.navactive {
+nav .navactive {
   position: absolute;
   display: block;
   background: #676E90;
@@ -53,128 +21,176 @@ nav > ul > li > a:active {
   position: fixed;
 }
 
-aside > h1 > a:visited {
-  color: white;
-}
-
-aside > h1 > a:link {
-  color: white;
-}
-
-aside > h1 > a:active {
-  color: white;
-  text-decoration: none;
-}
-
-aside > #menubar {
-    width: 30px;
-    height: auto;
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
-}
-
-article {
-  margin: 0 5%;
-}
-
-.content-section {
-    background: #ffffff;
-    padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    margin-bottom: 20px;
-  }
-  
-.article-title {
-  color: #444444;
-}
-
-a.article-title:hover {
-  color: #428bca;
-  text-decoration: none;
-}
-
-.article-content {
-  white-space: pre-line;
-}
-
-.article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
+nav ul {
   display: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.article-metadata {
-  padding-bottom: 1px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
+nav ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 3em;
+  color: white;
 }
 
-.article-metadata a:hover {
-  color: #333;
+nav ul li a:hover {
+  color: white;
   text-decoration: none;
 }
 
-.article-svg {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
+nav ul li a:active {
+  color: #428bca;
 }
 
-.account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
+aside {
+  background-color: #2F375A;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 85% 15%;
+      grid-template-columns: 85% 15%;
+  padding: 1.5em;
 }
 
-.account-heading {
-  font-size: 2.5rem;
-}
-
-.header {
-  margin-left: 5%;
-  margin-bottom: .5em;
-  font-weight: bold;
-}
-
-.paginate {
-  margin-left: 5%;
-}
-
-#logo {
-  color: white;
+aside #logo {
   font-weight: 600;
   font-size: 1.5em;
   margin: 0;
   padding: 0;
 }
 
-#logo > a:hover {
-text-decoration: none;
+aside #logo a:hover {
+  text-decoration: none;
 }
 
-#banner {
+aside #menubar {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+aside h1 a:visited {
+  color: white;
+}
+
+aside h1 a:link {
+  color: white;
+}
+
+aside h1 a:active {
+  color: white;
+  text-decoration: none;
+}
+
+main #banner {
   padding-top: 7em;
   padding-bottom: 7em;
   background: url("banner_bg.jpg") center no-repeat;
 }
 
-#banner > h2 {
+main #banner h2 {
   color: white;
   font-weight: bolder;
 }
 
-#banner > a{
+main #banner a {
   margin: .5em;
 }
 
-#logout {
+main article {
+  margin: 0 5%;
+}
+
+main .content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+main .article-title {
+  color: #444444;
+}
+
+main a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+main .article-content {
+  white-space: pre-line;
+}
+
+main .article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+  display: none;
+}
+
+main .article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+main .article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+main .article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+main .account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+main .account-heading {
+  font-size: 2.5rem;
+}
+
+main .header {
+  margin-left: 5%;
+  margin-bottom: .5em;
+  font-weight: bold;
+}
+
+main .paginate {
+  margin-left: 5%;
+}
+
+main #logout {
   margin: 2em 1em;
 }
 
-@media only screen and (min-width: 768px) {
-  
+@media (min-width: 1085px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 20% auto;
+        grid-template-columns: 20% auto;
+    padding: 2em;
+  }
+  body aside {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: 30% auto;
+        grid-template-rows: 30% auto;
+  }
+  body aside #menubar {
+    display: none;
+  }
 }
+/*# sourceMappingURL=style.css.map */

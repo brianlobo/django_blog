@@ -16,39 +16,37 @@
     </head>
     
     <body>
-        <div class="wrapper">
-            <aside>
-                <h1 id="logo"><a href="{% url 'blog-home' %}">Django Blog</a></h1>
-                <img id="menubar" src="{% static 'blog/menubar.svg' %}" alt="">
-                <nav>
-                    <ul>
+        <aside>
+            <h1 id="logo"><a href="{% url 'blog-home' %}">Django Blog</a></h1>
+            <img id="menubar" src="{% static 'blog/menubar.svg' %}" alt="">
+            <nav>
+                <ul>
 
-                        <li><a href="{% url 'blog-home' %}">Home</a></li>
-                        <li><a href="{% url 'blog-about' %}">About</a></li>
-                        <li><a href="{% url 'post-create' %}">New Post</a></li>
+                    <li><a href="{% url 'blog-home' %}">Home</a></li>
+                    <li><a href="{% url 'blog-about' %}">About</a></li>
+                    <li><a href="{% url 'post-create' %}">New Post</a></li>
 
-                        {% if user.is_authenticated %}
-                        <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>
-                        <li><a href="{% url 'logout' %}">Logout</a></li>
-                        {% else %}
-                        <li><a href="{% url 'login' %}">Login</a></li>
-                        <li><a href="{% url 'register' %}">Register</a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            </aside>
-            <main>
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-                {% block content %}
-                {% endblock %}
-            </main>
-        </div>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}
+            {% endblock %}
+        </main>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
