@@ -181,16 +181,29 @@ main #logout {
     display: grid;
     -ms-grid-columns: 20% auto;
         grid-template-columns: 20% auto;
-    padding: 2em;
   }
   body aside {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
-    -ms-grid-rows: 30% auto;
-        grid-template-rows: 30% auto;
+    -ms-grid-rows: 25% auto;
+        grid-template-rows: 25% auto;
   }
   body aside #menubar {
     display: none;
+  }
+  body aside h1#logo {
+    text-align: center;
+    padding-top: 2em;
+  }
+  body aside nav {
+    background: none;
+  }
+  body aside nav ul {
+    display: block;
+  }
+  body aside nav ul li a {
+    padding: 2em;
+    text-align: center;
   }
 }
 /*# sourceMappingURL=style.css.map */

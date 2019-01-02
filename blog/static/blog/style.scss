@@ -212,13 +212,32 @@ main {
     body {
         display: grid;
         grid-template-columns: 20% auto;
-        padding: 2em;
         
         aside {
             grid-template-columns: auto;
-            grid-template-rows: 30% auto;
+            grid-template-rows: 25% auto;
+            
             #menubar {
                 display: none;
+            }
+            
+            h1#logo {
+                text-align: center;
+                padding-top: 2em;
+            }
+
+            nav {
+                background: none;
+                ul {
+                    display: block;
+
+                    li {
+                        a {
+                            padding: 2em;
+                            text-align: center;
+                        }
+                    }
+                }
             }
         }
     }
