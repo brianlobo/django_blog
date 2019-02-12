@@ -187,6 +187,7 @@ main #logout {
         grid-template-columns: auto;
     -ms-grid-rows: 25% auto;
         grid-template-rows: 25% auto;
+    height: 100%;
   }
   body aside #menubar {
     display: none;

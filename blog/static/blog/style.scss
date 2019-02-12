@@ -216,6 +216,7 @@ main {
         aside {
             grid-template-columns: auto;
             grid-template-rows: 25% auto;
+            height: 100%;
             
             #menubar {
                 display: none;
